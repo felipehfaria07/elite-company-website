@@ -128,6 +128,22 @@ footer div:first-child:hover .lucide-chess-knight{transform:rotate(360deg)}
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.6);transform:scale(0);animation:ripple-anim .6s ease-out;pointer-events:none}
 @keyframes ripple-anim{to{transform:scale(4);opacity:0}}
 
+/* ======== LEAD MODAL ======== */
+#lead-modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:1rem}
+#lead-modal.open{display:flex}
+#modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#modal-box{position:relative;width:100%;max-width:480px;border-radius:1.25rem;border:1px solid rgba(212,175,55,.25);background:var(--card,#111);padding:2rem 2.5rem 2.5rem;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 0 1px rgba(212,175,55,.08)}
+#modal-box label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(180,180,180,.65);margin-bottom:.4rem}
+#modal-box input{display:block;width:100%;padding:.75rem 1rem;border-radius:.5rem;border:1px solid rgba(212,175,55,.2);background:rgba(255,255,255,.04);color:inherit;font-size:.95rem;outline:none;transition:border-color .25s,background .25s;-webkit-appearance:none;box-sizing:border-box}
+#modal-box input:focus{border-color:rgba(212,175,55,.65);background:rgba(212,175,55,.05)}
+#modal-box input::placeholder{color:rgba(180,180,180,.3)}
+#modal-box input.input-error{border-color:rgba(220,60,60,.6)}
+#modal-close{position:absolute;top:.9rem;right:.9rem;background:none;border:none;color:rgba(180,180,180,.45);cursor:pointer;padding:.4rem;border-radius:.4rem;transition:color .2s,background .2s;line-height:0}
+#modal-close:hover{color:#fff;background:rgba(255,255,255,.08)}
+#lead-form.hidden{display:none}
+#modal-success{display:none}
+#modal-success.show{display:flex;flex-direction:column;align-items:center;text-align:center}
+
 /* ======== REDUCED MOTION ======== */
 @media (prefers-reduced-motion: reduce){
   *,html{scroll-behavior:auto !important;animation:none !important;transition:none !important}
@@ -165,6 +181,47 @@ footer div:first-child:hover .lucide-chess-knight{transform:rotate(360deg)}
 </summary>
 <p class="mt-4 text-muted-foreground">We map your demand gaps and propose a plan. Onboarding in week 1.</p>
 </details></div></div></section><section id="book" class="relative overflow-hidden py-24 md:py-32"><div class="pointer-events-none absolute inset-0 opacity-50" style="background:radial-gradient(50% 60% at 50% 50%, color-mix(in oklab, var(--gold) 25%, transparent), transparent)"></div><div class="relative mx-auto max-w-4xl px-6 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap mx-auto h-10 w-10 text-primary" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg><h2 class="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">Ready to structure your demand generation?</h2><p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">Book a free 15-minute call. We'll show you exactly what's broken — and what to do about it.</p><div class="mt-10 flex flex-col items-center gap-4"><a href="#book" class="group inline-flex items-center justify-center gap-2 rounded-md font-semibold text-primary-foreground transition-all hover:scale-[1.02] active:scale-100 px-7 py-4 text-base" style="background:var(--gradient-gold);box-shadow:var(--shadow-gold)">Book Your Free Strategy Call<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><p class="text-sm text-muted-foreground">15-minute call · No obligation · 1 client per market</p></div></div></section></main><footer class="border-t border-border bg-card/40"><div class="mx-auto max-w-7xl px-6 py-12"><div class="grid gap-10 md:grid-cols-3"><div><div class="flex items-center gap-2 font-bold"><div class="flex h-8 w-8 items-center justify-center rounded-md text-primary-foreground" style="background:var(--gradient-gold)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chess-knight h-4 w-4" aria-hidden="true"><path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"></path><path d="M16.5 18c1-2 2.5-5 2.5-9a7 7 0 0 0-7-7H6.635a1 1 0 0 0-.768 1.64L7 5l-2.32 5.802a2 2 0 0 0 .95 2.526l2.87 1.456"></path><path d="m15 5 1.425-1.425"></path><path d="m17 8 1.53-1.53"></path><path d="M9.713 12.185 7 18"></path></svg></div><span class="text-lg">Elite Company<span class="text-primary">.</span></span></div><p class="mt-4 text-sm text-muted-foreground">Predictable buyer demand systems for US real estate developers.</p><p class="mt-4 text-xs uppercase tracking-widest text-primary">We work with only one client per market.</p></div><div><p class="text-xs uppercase tracking-widest text-muted-foreground">Contact</p><a href="mailto:elitecompany003@gmail.com" class="mt-4 flex items-center gap-2 text-sm hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg> elitecompany003@gmail.com</a><a href="tel:+5512996508357" class="mt-2 flex items-center gap-2 text-sm hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-4 w-4" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> +55 (12) 99650-8357</a></div><div><p class="text-xs uppercase tracking-widest text-muted-foreground">Legal</p><a href="#" class="mt-4 block text-sm text-muted-foreground hover:text-foreground">Privacy Policy</a><a href="#" class="mt-2 block text-sm text-muted-foreground hover:text-foreground">Terms of Service</a></div></div><div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row"><p>© <!-- -->2026<!-- --> Elite Company. All rights reserved.</p><p>Built for US real estate developers.</p></div></div></footer></div>
+<!-- Lead Capture Modal -->
+<div id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="modal-backdrop"></div>
+  <div id="modal-box">
+    <button id="modal-close" aria-label="Close dialog">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div id="lead-form">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border-radius:50%;background:var(--gradient-gold);margin-bottom:1.25rem">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#0b0b0b" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+      </div>
+      <h2 id="modal-title" style="font-size:1.5rem;font-weight:700;line-height:1.2;margin:0 0 .5rem">See how it works</h2>
+      <p style="font-size:.875rem;color:rgba(180,180,180,.7);margin:0 0 1.75rem;line-height:1.55">Tell us about you and we'll walk you through exactly how we generate qualified buyers for real estate developers.</p>
+      <form id="lead-capture-form" novalidate>
+        <div style="margin-bottom:1rem">
+          <label for="lead-name">Full Name</label>
+          <input type="text" id="lead-name" name="name" placeholder="John Smith" autocomplete="name" required>
+        </div>
+        <div style="margin-bottom:1rem">
+          <label for="lead-email">Email</label>
+          <input type="email" id="lead-email" name="email" placeholder="john@company.com" autocomplete="email" required>
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <label for="lead-phone">Phone</label>
+          <input type="tel" id="lead-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
+        </div>
+        <button id="lead-submit" type="submit" style="display:inline-flex;width:100%;align-items:center;justify-content:center;gap:.5rem;border-radius:.5rem;border:none;cursor:pointer;font-size:1rem;font-weight:600;padding:.875rem 1.5rem;background:var(--gradient-gold);box-shadow:var(--shadow-gold);color:var(--primary-foreground,#0b0b0b);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">Show me how it works<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        <p style="margin:.875rem 0 0;text-align:center;font-size:.72rem;color:rgba(180,180,180,.4)">No spam. No obligation.</p>
+      </form>
+    </div>
+    <div id="modal-success">
+      <div style="display:flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;border-radius:50%;background:var(--gradient-gold);margin-bottom:1.5rem;flex-shrink:0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#0b0b0b" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 style="font-size:1.5rem;font-weight:700;line-height:1.2;margin:0 0 .75rem">We've received your info!</h2>
+      <p style="font-size:.9rem;color:rgba(180,180,180,.72);line-height:1.6;margin:0 0 2rem">Someone from our team will be in touch with you within 24 hours to show you exactly how we generate qualified buyers for your real estate business.</p>
+      <button onclick="closeLeadModal()" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.5rem;border:1px solid rgba(212,175,55,.35);background:none;color:inherit;cursor:pointer;font-size:.875rem;font-weight:600;padding:.625rem 1.5rem;transition:border-color .2s,background .2s" onmouseover="this.style.borderColor='rgba(212,175,55,.7)';this.style.background='rgba(212,175,55,.06)'" onmouseout="this.style.borderColor='rgba(212,175,55,.35)';this.style.background='none'">Back to site</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   if (typeof IntersectionObserver === 'undefined') return;
@@ -341,6 +398,96 @@ footer div:first-child:hover .lucide-chess-knight{transform:rotate(360deg)}
       orbs.style.transform = 'translateY(' + y + 'px)';
     }, { passive: true });
   }
+})();
+</script>
+<script>
+/* ---- Lead Modal ---- */
+var CRM_WEBHOOK_URL = ''; /* TODO: Cole aqui a URL do webhook do QUO */
+
+function openLeadModal() {
+  var m = document.getElementById('lead-modal');
+  if (!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  var first = m.querySelector('input');
+  if (first) setTimeout(function(){ first.focus(); }, 60);
+}
+
+function closeLeadModal() {
+  var m = document.getElementById('lead-modal');
+  if (!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+(function(){
+  document.querySelectorAll('a[href="#book"]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      openLeadModal();
+    }, true);
+  });
+
+  var backdrop = document.getElementById('modal-backdrop');
+  if (backdrop) backdrop.addEventListener('click', closeLeadModal);
+
+  var closeBtn = document.getElementById('modal-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeLeadModal);
+
+  document.addEventListener('keydown', function(ev){
+    if (ev.key === 'Escape') closeLeadModal();
+  });
+
+  var form = document.getElementById('lead-capture-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var nameEl  = document.getElementById('lead-name');
+    var emailEl = document.getElementById('lead-email');
+    var phoneEl = document.getElementById('lead-phone');
+    var submitBtn = document.getElementById('lead-submit');
+
+    [nameEl, emailEl, phoneEl].forEach(function(el){ el.classList.remove('input-error'); });
+
+    var valid = true;
+    if (!nameEl.value.trim()) { nameEl.classList.add('input-error'); valid = false; }
+    if (!emailEl.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) { emailEl.classList.add('input-error'); valid = false; }
+    if (!phoneEl.value.trim()) { phoneEl.classList.add('input-error'); valid = false; }
+    if (!valid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    var payload = {
+      name: nameEl.value.trim(),
+      email: emailEl.value.trim(),
+      phone: phoneEl.value.trim(),
+      source_url: window.location.href,
+      submitted_at: new Date().toISOString()
+    };
+
+    function showSuccess() {
+      document.getElementById('lead-form').classList.add('hidden');
+      document.getElementById('modal-success').classList.add('show');
+    }
+
+    if (CRM_WEBHOOK_URL) {
+      fetch(CRM_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(showSuccess)
+      .catch(function(err){
+        console.error('CRM webhook error:', err);
+        showSuccess();
+      });
+    } else {
+      showSuccess();
+    }
+  });
 })();
 </script>
 </body>

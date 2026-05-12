@@ -474,17 +474,29 @@ function closeLeadModal() {
     }
 
     if (CRM_WEBHOOK_URL) {
-      fetch(CRM_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(payload).toString()
-      })
-      .then(showSuccess)
-      .catch(function(err){
-        console.error('CRM webhook error:', err);
-        showSuccess();
+      var iframe = document.createElement('iframe');
+      iframe.name = 'zap-frame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      var hform = document.createElement('form');
+      hform.method = 'POST';
+      hform.action = CRM_WEBHOOK_URL;
+      hform.target = 'zap-frame';
+      Object.keys(payload).forEach(function(k){
+        var inp = document.createElement('input');
+        inp.type = 'hidden';
+        inp.name = k;
+        inp.value = payload[k];
+        hform.appendChild(inp);
       });
+      document.body.appendChild(hform);
+      hform.submit();
+      setTimeout(function(){
+        document.body.removeChild(hform);
+        document.body.removeChild(iframe);
+      }, 5000);
+      showSuccess();
     } else {
       showSuccess();
     }
